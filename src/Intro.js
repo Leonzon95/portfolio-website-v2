@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 const Intro  = () => {
+    const [padding, setPadding] = useState(null);
+    const [fontSize, setFontSize] = useState(null);
+    const [textAlign, setTextAlign] = useState(null);
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 769) {
+                setPadding("0rem 5.6rem")
+                setFontSize("3.5rem")
+                setTextAlign("left")
+            } else {
+                setPadding("0 1.6rem")
+                setFontSize("2.5rem")
+                setTextAlign("center")
+            }
+        })
+    }, []);
+    
     return (
-        <section id="intro">
-            <Container>
-               <Row >
-                    <Col md={12} sm={12} xs={12}>
-                    <h1>Hello, world!</h1>
-                    <p>
-                        This is a simple hero unit, a simple jumbotron-style component for calling
-                        extra attention to featured content or information.
-                    </p>
+        <section id="intro" style={{padding: padding}}>
+            <Container >
+               
+                    <h1 className="intro-title" style={{fontSize: fontSize, textAlign: textAlign}}>
+                        Hello, My name is Leonardo Briones <br/>
+                        I am a Full Stack Web Developer
+                    </h1>
                     <p>
                         <Button variant="primary">Learn more</Button>
                     </p>
-                    </Col>
-                </Row>  
+                     
                 </Container>     
         </section>
     )
