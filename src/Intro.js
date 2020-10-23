@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import Fade from 'react-reveal/Fade';
 
 const Intro  = () => {
     const [padding, setPadding] = useState(null);
@@ -19,7 +20,7 @@ const Intro  = () => {
                 setTextAlign("center")
             }
     }
-    
+
     useEffect(() => {
         styles();
         window.addEventListener('resize', styles)
@@ -28,11 +29,12 @@ const Intro  = () => {
     return (
         <section id="intro" style={{padding: padding}}>
             <Container >
-               
+                <Fade duration={1000} delay={500} distance="30px" left>
                     <h1 className="intro-title" style={{fontSize: fontSize, textAlign: textAlign}}>
-                        Hello! I'm Leo <br/>
+                        Hello! I'm Leonardo <br/>
                         I am a Full Stack Web Developer
                     </h1>
+                </Fade>
                     <p>
                         <Button variant="primary">Learn more</Button>
                     </p>
