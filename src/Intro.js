@@ -7,8 +7,8 @@ const Intro  = () => {
     const [fontSize, setFontSize] = useState(null);
     const [textAlign, setTextAlign] = useState(null);
 
-    useEffect(() => {
-        window.addEventListener('resize', () => {
+
+    const styles = () => {
             if (window.innerWidth > 769) {
                 setPadding("0rem 5.6rem")
                 setFontSize("3.5rem")
@@ -18,7 +18,11 @@ const Intro  = () => {
                 setFontSize("2.5rem")
                 setTextAlign("center")
             }
-        })
+    }
+    
+    useEffect(() => {
+        styles();
+        window.addEventListener('resize', styles)
     }, []);
     
     return (
@@ -26,7 +30,7 @@ const Intro  = () => {
             <Container >
                
                     <h1 className="intro-title" style={{fontSize: fontSize, textAlign: textAlign}}>
-                        Hello, My name is Leonardo Briones <br/>
+                        Hello! I'm Leo <br/>
                         I am a Full Stack Web Developer
                     </h1>
                     <p>
