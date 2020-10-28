@@ -17,6 +17,31 @@
 
 .intro-title {
   margin-bottom: 3.2rem;
-  text-align: left;
   max-width: 37.5em
+}
+
+@media (min-width: 800px) {
+  /* setPadding("0rem 5.6rem")
+  //             setFontSize("3.5rem")
+  //
+               setTextAlign("left") */
+  #intro {
+    padding: 0rem 5.6rem!important;
+    text-align: left!important;
+  }
+  #intro h1{
+    font-size: 3.5rem!important;
+
+  }
+}
+
+@media (min-width: 300px) {
+  /* setPadding("0 1.6rem")
+  //             setFontSize("2.5rem")
+  //             setTextAlign("center") */
+  #intro {
+    padding: 0 1.6rem;
+    font-size: 2.5rem;
+    text-align: center;
+  }
 }
