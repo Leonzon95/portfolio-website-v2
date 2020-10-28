@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 
 const Intro  = () => {
-    
+
     return (
         <section id="intro" >
             <Container >
